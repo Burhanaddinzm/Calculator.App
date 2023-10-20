@@ -18,7 +18,7 @@ namespace Calculator.App.Services
                 int.TryParse(Console.ReadLine(), out int Num2);
 
                 Console.WriteLine("Input operation");
-                OperatorCommand = char.Parse(Console.ReadLine());
+                char.TryParse(Console.ReadLine(), out char OperatorCommand);
                 switch (OperatorCommand)
                 {
                     case '+':
