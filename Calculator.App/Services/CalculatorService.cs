@@ -8,7 +8,7 @@ namespace Calculator.App.Services
         char OperatorCommand { get; set; }
         int Result { get; set; }
         //public bool IsRunning { get; set; }
-        public string Calculator()
+        public void Calculator()
         {
             //IsRunning = false;
             while (/*IsRunning == false*/true)
@@ -33,19 +33,17 @@ namespace Calculator.App.Services
                         Result = Num1 * Num2;
                         break;
                     case '/':
-                        Result = Num1 * Num2;
+                        Result = Num1 / Num2;
                         break;
                     default:
                         Console.WriteLine("Please input correct operator");
                         break;
 
                 }
-
-                return $"{Num1} {OperatorCommand} {Num2} = {Result}";
+                Console.WriteLine($"{Num1} {OperatorCommand} {Num2} = {Result}");
 
 
             }
-            return $"{Result}";
 
 
         }
