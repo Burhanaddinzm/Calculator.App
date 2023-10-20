@@ -7,11 +7,9 @@ namespace Calculator.App.Services
     {
         char OperatorCommand { get; set; }
         int Result { get; set; }
-        //public bool IsRunning { get; set; }
-        public void Calculator()
+        public string Calculator()
         {
-            //IsRunning = false;
-            while (/*IsRunning == false*/true)
+            while (true)
             {
                 Console.WriteLine("Input first value");
                 int.TryParse(Console.ReadLine(), out int Num1);
@@ -40,7 +38,7 @@ namespace Calculator.App.Services
                         break;
 
                 }
-                Console.WriteLine($"{Num1} {OperatorCommand} {Num2} = {Result}");
+                return $"{Num1} {OperatorCommand} {Num2} = {Result}";
 
 
             }

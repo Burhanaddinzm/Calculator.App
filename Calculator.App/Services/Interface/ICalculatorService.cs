@@ -2,6 +2,6 @@
 {
     public interface ICalculatorService
     {
-        void Calculator();
+        string Calculator();
     }
 }

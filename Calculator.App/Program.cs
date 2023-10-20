@@ -1,4 +1,4 @@
 ﻿using Calculator.App.Services;
 
 CalculatorService calculator = new CalculatorService();
-calculator.Calculator();
+Console.WriteLine(calculator.Calculator()); 
