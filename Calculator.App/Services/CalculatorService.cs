@@ -5,7 +5,6 @@ namespace Calculator.App.Services
 
     public class CalculatorService : ICalculatorService
     {
-        char OperatorCommand { get; set; }
         int Result { get; set; }
         public string Calculator()
         {
