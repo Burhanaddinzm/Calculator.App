@@ -5,43 +5,37 @@ namespace Calculator.App.Services
 
     public class CalculatorService : ICalculatorService
     {
-        int Result { get; set; }
-        public string Calculator()
+        public int Result { get; set; }
+        public string Calculate()
         {
-            while (true)
+            Console.WriteLine("Enter the first value:");
+            int.TryParse(Console.ReadLine(), out int Num1);
+
+            Console.WriteLine("Enter the second value:");
+            int.TryParse(Console.ReadLine(), out int Num2);
+
+            Console.WriteLine("Enter the operator (+, -, *, /):");
+            char.TryParse(Console.ReadLine(), out char operatorCommand);
+            Result = 0;
+            switch (operatorCommand)
             {
-                Console.WriteLine("Input first value");
-                int.TryParse(Console.ReadLine(), out int Num1);
-
-                Console.WriteLine("Input second value");
-                int.TryParse(Console.ReadLine(), out int Num2);
-
-                Console.WriteLine("Input operation");
-                char.TryParse(Console.ReadLine(), out char OperatorCommand);
-                switch (OperatorCommand)
-                {
-                    case '+':
-                        Result = Num1 + Num2;
-                        break;
-                    case '-':
-                        Result = Num1 - Num2;
-                        break;
-                    case '*':
-                        Result = Num1 * Num2;
-                        break;
-                    case '/':
-                        Result = Num1 / Num2;
-                        break;
-                    default:
-                        Console.WriteLine("Please input correct operator");
-                        break;
-
-                }
-                return $"{Num1} {OperatorCommand} {Num2} = {Result}";
-
-
+                case '+':
+                    Result = Num1 + Num2;
+                    break;
+                case '-':
+                    Result = Num1 - Num2;
+                    break;
+                case '*':
+                    Result = Num1 * Num2;
+                    break;
+                case '/':
+                    Result = Num1 / Num2;
+                    break;
+                default:
+                    Console.WriteLine("Please input a valid operator (+, -, *, /).");
+                    break;
             }
-
+            return $"{Num1} {operatorCommand} {Num2} = {Result}";
 
         }
     }
